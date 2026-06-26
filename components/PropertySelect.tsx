@@ -12,7 +12,7 @@ const T = {
 export default function PropertySelect({ lang, onSelect }: { lang: Lang; onSelect: (id: 'cs1' | 'cs2') => void }) {
   const t = T[lang];
   return (
-    <div style={{ minHeight: '100vh', background: '#FAFAF8', display: 'flex', flexDirection: 'column', fontFamily: 'Inter, sans-serif' }}>
+    <div className="fullh" style={{ background: '#FAFAF8', display: 'flex', flexDirection: 'column', fontFamily: 'Inter, sans-serif', overflowY: 'auto' }}>
       {/* Header */}
       <div style={{ background: '#1A1A18', padding: '28px 24px 24px', textAlign: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 10 }}>

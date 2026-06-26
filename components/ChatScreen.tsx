@@ -49,7 +49,7 @@ export default function ChatScreen({ lang, prop, messages, draft, generating, sc
   const sendBg = generating ? '#C9B6A2' : AC;
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAF8', fontFamily: 'Inter, sans-serif' }}>
+    <div className="fullh" style={{ display: 'flex', flexDirection: 'column', background: '#FAFAF8', fontFamily: 'Inter, sans-serif' }}>
       {/* Header */}
       <div style={{ background: '#1A1A18', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, borderBottom: `2px solid ${AC}` }}>
         <div style={{ width: 36, height: 36, borderRadius: 999, background: AC, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>

@@ -12,7 +12,7 @@ const T = {
 export default function WelcomeScreen({ lang }: { lang: Lang }) {
   const t = T[lang];
   return (
-    <div style={{ height: '100vh', minHeight: 580, background: '#1A1A18', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 32, overflow: 'hidden', fontFamily: 'Inter, sans-serif' }}>
+    <div className="fullh" style={{ minHeight: 560, background: '#1A1A18', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 32, overflow: 'hidden', fontFamily: 'Inter, sans-serif' }}>
       <div style={{ textAlign: 'center', maxWidth: 380 }}>
         <div className="lfade1" style={{ position: 'relative', width: 84, height: 84, margin: '0 auto 32px' }}>
           <span style={{ position: 'absolute', inset: 0, borderRadius: 999, border: `1px solid ${TINT}`, animation: 'ring 2.8s ease-out infinite' }} />

@@ -5,7 +5,7 @@ const AC = '#C4773B';
 
 export default function LangSelect({ onSelect }: { onSelect: (lang: Lang) => void }) {
   return (
-    <div style={{ height: '100vh', minHeight: 580, background: '#1A1A18', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 32, fontFamily: 'Inter, sans-serif', overflow: 'hidden' }}>
+    <div className="fullh" style={{ minHeight: 560, background: '#1A1A18', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 32, fontFamily: 'Inter, sans-serif', overflow: 'hidden' }}>
       <div style={{ textAlign: 'center', maxWidth: 420, width: '100%' }}>
 
         {/* Icon */}
