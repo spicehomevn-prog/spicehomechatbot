@@ -26,7 +26,9 @@ export default function MessageBubble({ m, lang }: Props) {
     <div className="msg" style={{ alignSelf: 'flex-start', maxWidth: '88%', width: '100%' }}>
       {/* Bot label */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 6 }}>
-        <div style={{ width: 22, height: 22, borderRadius: 999, background: AC, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, flex: 'none' }}>✦</div>
+        <div style={{ width: 22, height: 22, borderRadius: 999, background: AC, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>
+          <img src="/logo/mark-reverse.svg" alt="" style={{ width: 14, height: 14 }} />
+        </div>
         <span style={{ font: '500 11px Inter, sans-serif', letterSpacing: '.1em', textTransform: 'uppercase', color: AC }}>SpiceHome</span>
       </div>
 

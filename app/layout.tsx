@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'SpiceHome — Trợ lý ảo 24/7',
   description: 'Trợ lý ảo của SpiceHome — hỗ trợ khách lưu trú 24/7. SpiceHome virtual assistant for guests.',
+  icons: {
+    icon: [
+      { url: '/logo/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo/favicon-64.png', sizes: '64x64', type: 'image/png' },
+    ],
+    apple: { url: '/logo/apple-touch-icon.png' },
+    shortcut: '/logo/favicon-64.png',
+  },
   openGraph: {
     title: 'SpiceHome — Trợ lý ảo 24/7',
     description: 'Hỏi chúng mình bất cứ điều gì · Ask us anything · 24/7',

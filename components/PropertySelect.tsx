@@ -15,7 +15,10 @@ export default function PropertySelect({ lang, onSelect }: { lang: Lang; onSelec
     <div style={{ minHeight: '100vh', background: '#FAFAF8', display: 'flex', flexDirection: 'column', fontFamily: 'Inter, sans-serif' }}>
       {/* Header */}
       <div style={{ background: '#1A1A18', padding: '28px 24px 24px', textAlign: 'center' }}>
-        <div style={{ font: '500 11px Inter, sans-serif', letterSpacing: '.2em', textTransform: 'uppercase', color: AC, marginBottom: 10 }}>SpiceHome</div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 10 }}>
+          <img src="/logo/mark-reverse.svg" alt="SpiceHome" style={{ width: 28, height: 28 }} />
+          <span style={{ font: '500 11px Inter, sans-serif', letterSpacing: '.2em', textTransform: 'uppercase', color: AC }}>SpiceHome</span>
+        </div>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, color: '#fff', lineHeight: 1.2, marginBottom: 6 }}>{t.heading}</div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{t.sub}</div>
       </div>

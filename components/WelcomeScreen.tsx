@@ -17,7 +17,9 @@ export default function WelcomeScreen({ lang }: { lang: Lang }) {
         <div className="lfade1" style={{ position: 'relative', width: 84, height: 84, margin: '0 auto 32px' }}>
           <span style={{ position: 'absolute', inset: 0, borderRadius: 999, border: `1px solid ${TINT}`, animation: 'ring 2.8s ease-out infinite' }} />
           <span style={{ position: 'absolute', inset: 0, borderRadius: 999, border: `1px solid ${TINT}`, animation: 'ring 2.8s ease-out 1.4s infinite' }} />
-          <div style={{ position: 'absolute', inset: 0, borderRadius: 999, background: AC, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 34, animation: 'breathe 2.8s ease-in-out infinite' }}>✦</div>
+          <div style={{ position: 'absolute', inset: 0, borderRadius: 999, background: AC, display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'breathe 2.8s ease-in-out infinite' }}>
+            <img src="/logo/mark-reverse.svg" alt="SpiceHome" style={{ width: 46, height: 46 }} />
+          </div>
         </div>
         <div className="lfade2" style={{ font: '500 11px Inter, sans-serif', letterSpacing: '.22em', textTransform: 'uppercase', color: AC, marginBottom: 14 }}>SpiceHome</div>
         <div className="lfade2" style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontSize: 16, color: 'rgba(255,255,255,.6)', marginBottom: 6 }}>{t.sub}</div>

@@ -52,7 +52,9 @@ export default function ChatScreen({ lang, prop, messages, draft, generating, sc
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAF8', fontFamily: 'Inter, sans-serif' }}>
       {/* Header */}
       <div style={{ background: '#1A1A18', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, borderBottom: `2px solid ${AC}` }}>
-        <div style={{ width: 36, height: 36, borderRadius: 999, background: AC, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, flex: 'none' }}>✦</div>
+        <div style={{ width: 36, height: 36, borderRadius: 999, background: AC, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>
+            <img src="/logo/mark-reverse.svg" alt="SpiceHome" style={{ width: 22, height: 22 }} />
+          </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.2 }}>{prop.name}</div>
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,.45)', marginTop: 1 }}>SpiceHome · Trợ lý ảo 24/7</div>
@@ -74,7 +76,9 @@ export default function ChatScreen({ lang, prop, messages, draft, generating, sc
       >
         {messages.length === 0 ? (
           <div style={{ margin: 'auto', textAlign: 'center', maxWidth: 340, padding: '40px 0' }}>
-            <div style={{ width: 52, height: 52, borderRadius: 999, background: `rgba(196,119,59,.1)`, border: `1px solid rgba(196,119,59,.25)`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px', fontSize: 22, color: AC }}>✦</div>
+            <div style={{ width: 52, height: 52, borderRadius: 999, background: `rgba(196,119,59,.1)`, border: `1px solid rgba(196,119,59,.25)`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}>
+                <img src="/logo/mark.svg" alt="SpiceHome" style={{ width: 32, height: 32 }} />
+              </div>
             <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, color: '#1A1A18', marginBottom: 8 }}>SpiceHome</div>
             <div style={{ fontSize: 13, color: '#7A7A72', lineHeight: 1.6 }}>{t.empty}</div>
           </div>
