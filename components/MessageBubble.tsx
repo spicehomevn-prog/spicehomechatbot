@@ -3,6 +3,15 @@ import type { GuestMessage, Lang } from '@/lib/types';
 
 const AC = '#C4773B';
 
+function linkify(text: string): React.ReactNode[] {
+  const parts = text.split(/(https?:\/\/[^\s]+)/g);
+  return parts.map((part, i) =>
+    /^https?:\/\//.test(part)
+      ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: AC, textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>
+      : part
+  );
+}
+
 interface Props {
   m: GuestMessage;
   lang: Lang;
@@ -38,7 +47,7 @@ export default function MessageBubble({ m, lang }: Props) {
         </div>
       ) : (
         <div className="bubble bubbleBot" style={{ display: 'inline-block', maxWidth: '100%', background: '#fff', border: `1px solid #E8E4DC`, padding: '12px 16px', fontSize: 14, lineHeight: 1.65, color: '#2C2C2A', borderRadius: 18, borderBottomLeftRadius: 4 }}>
-          <div style={{ whiteSpace: 'pre-wrap' }}>{m.displayText}</div>
+          <div style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{linkify(m.displayText)}</div>
         </div>
       )}
     </div>
