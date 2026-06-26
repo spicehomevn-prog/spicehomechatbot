@@ -20,6 +20,27 @@ const T = {
     change: 'Change',
     empty: 'Ask us about WiFi, check-in, local food spots, facilities, or anything you need 😊',
   },
+  zh: {
+    placeholder: '有任何问题都可以问我们…',
+    send: '发送',
+    generating: '正在输入…',
+    change: '切换',
+    empty: '欢迎询问关于WiFi、入住、餐厅、设施或任何您需要的信息 😊',
+  },
+  ja: {
+    placeholder: '何でもお気軽にどうぞ…',
+    send: '送信',
+    generating: '入力中…',
+    change: '変更',
+    empty: 'WiFi・チェックイン・近くの食事・施設など、何でもお聞きください 😊',
+  },
+  ko: {
+    placeholder: '무엇이든 물어보세요…',
+    send: '전송',
+    generating: '입력 중…',
+    change: '변경',
+    empty: 'WiFi, 체크인, 근처 맛집, 시설 등 필요한 것은 무엇이든 물어보세요 😊',
+  },
 };
 
 interface Props {

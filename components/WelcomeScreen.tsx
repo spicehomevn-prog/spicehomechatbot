@@ -7,6 +7,9 @@ const TINT = 'rgba(196,119,59,.4)';
 const T = {
   vi: { sub: 'Xin chào! Chào mừng bạn đến với', title: 'SpiceHome', tag: 'Trợ lý ảo 24/7 — luôn sẵn sàng hỗ trợ bạn.' },
   en: { sub: 'Welcome to', title: 'SpiceHome', tag: '24/7 Virtual Assistant — always here to help.' },
+  zh: { sub: '欢迎来到', title: 'SpiceHome', tag: '24小时虚拟助手 — 随时为您服务。' },
+  ja: { sub: 'ようこそ', title: 'SpiceHome', tag: '24時間バーチャルアシスタント — いつでもお手伝いします。' },
+  ko: { sub: '에 오신 것을 환영합니다', title: 'SpiceHome', tag: '24시간 가상 어시스턴트 — 언제든지 도와드립니다.' },
 };
 
 export default function WelcomeScreen({ lang }: { lang: Lang }) {

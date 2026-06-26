@@ -32,38 +32,32 @@ export default function LangSelect({ onSelect }: { onSelect: (lang: Lang) => voi
         </div>
 
         {/* Language buttons */}
-        <div className="lfade3" style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <button
-            onClick={() => onSelect('vi')}
-            className="langcard"
-            style={{
-              cursor: 'pointer', border: `1px solid rgba(196,119,59,.35)`,
-              background: 'rgba(196,119,59,.08)', color: '#fff',
-              padding: '20px 36px', minWidth: 160,
-              fontFamily: 'Inter, sans-serif', fontSize: 16, fontWeight: 600,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
-              boxShadow: '0 4px 20px rgba(0,0,0,.3)',
-            }}
-          >
-            <span style={{ fontSize: 26 }}>🇻🇳</span>
-            <span>Tiếng Việt</span>
-          </button>
-
-          <button
-            onClick={() => onSelect('en')}
-            className="langcard"
-            style={{
-              cursor: 'pointer', border: `1px solid rgba(196,119,59,.35)`,
-              background: 'rgba(196,119,59,.08)', color: '#fff',
-              padding: '20px 36px', minWidth: 160,
-              fontFamily: 'Inter, sans-serif', fontSize: 16, fontWeight: 600,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
-              boxShadow: '0 4px 20px rgba(0,0,0,.3)',
-            }}
-          >
-            <span style={{ fontSize: 26 }}>🇬🇧</span>
-            <span>English</span>
-          </button>
+        <div className="lfade3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, maxWidth: 360, margin: '0 auto' }}>
+          {([
+            { lang: 'vi', flag: '🇻🇳', label: 'Tiếng Việt' },
+            { lang: 'en', flag: '🇬🇧', label: 'English' },
+            { lang: 'zh', flag: '🇨🇳', label: '中文' },
+            { lang: 'ja', flag: '🇯🇵', label: '日本語' },
+            { lang: 'ko', flag: '🇰🇷', label: '한국어' },
+          ] as const).map(({ lang, flag, label }) => (
+            <button
+              key={lang}
+              onClick={() => onSelect(lang)}
+              className="langcard"
+              style={{
+                cursor: 'pointer', border: `1px solid rgba(196,119,59,.35)`,
+                background: 'rgba(196,119,59,.08)', color: '#fff',
+                padding: '16px 12px',
+                fontFamily: 'Inter, sans-serif', fontSize: 15, fontWeight: 600,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9,
+                boxShadow: '0 4px 20px rgba(0,0,0,.3)',
+                gridColumn: lang === 'ko' ? 'span 2' : undefined,
+              }}
+            >
+              <span style={{ fontSize: 22 }}>{flag}</span>
+              <span>{label}</span>
+            </button>
+          ))}
         </div>
 
         <div className="lfade3" style={{ fontSize: 11, color: 'rgba(255,255,255,.2)', marginTop: 44 }}>

@@ -1,5 +1,5 @@
 export type Screen = 'lang-select' | 'welcome' | 'select' | 'chat';
-export type Lang = 'vi' | 'en';
+export type Lang = 'vi' | 'en' | 'zh' | 'ja' | 'ko';
 
 export interface GuestProperty {
   id: 'cs1' | 'cs2';

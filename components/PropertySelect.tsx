@@ -7,6 +7,9 @@ const AC = '#C4773B';
 const T = {
   vi: { heading: 'Bạn đang ở cơ sở nào?', sub: 'Chọn để bắt đầu trò chuyện với trợ lý ảo' },
   en: { heading: 'Which property are you staying at?', sub: 'Tap to start chatting with our virtual assistant' },
+  zh: { heading: '您住在哪个分部？', sub: '请选择以开始与虚拟助手聊天' },
+  ja: { heading: 'どちらの施設にご滞在ですか？', sub: 'タップしてバーチャルアシスタントとチャットを始めましょう' },
+  ko: { heading: '어느 지점에 머물고 계신가요?', sub: '가상 어시스턴트와 채팅을 시작하려면 선택하세요' },
 };
 
 export default function PropertySelect({ lang, onSelect }: { lang: Lang; onSelect: (id: 'cs1' | 'cs2') => void }) {
