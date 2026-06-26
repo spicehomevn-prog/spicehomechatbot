@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import type { GuestMessage, GuestProperty, Lang } from '@/lib/types';
 import MessageBubble from './MessageBubble';
+import LangToggle from './LangToggle';
 
 const AC = '#C4773B';
 
@@ -54,9 +55,10 @@ interface Props {
   onSend: () => void;
   onKey: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onChangeProperty: () => void;
+  onChangeLang: (l: Lang) => void;
 }
 
-export default function ChatScreen({ lang, prop, messages, draft, generating, scrollRef, onDraftChange, onSend, onKey, onChangeProperty }: Props) {
+export default function ChatScreen({ lang, prop, messages, draft, generating, scrollRef, onDraftChange, onSend, onKey, onChangeProperty, onChangeLang }: Props) {
   const t = T[lang];
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -80,12 +82,15 @@ export default function ChatScreen({ lang, prop, messages, draft, generating, sc
           <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.2 }}>{prop.name}</div>
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,.45)', marginTop: 1 }}>SpiceHome · Trợ lý ảo 24/7</div>
         </div>
-        <div
-          onClick={onChangeProperty}
-          className="hov"
-          style={{ cursor: 'pointer', border: '1px solid rgba(255,255,255,.2)', color: 'rgba(255,255,255,.7)', padding: '6px 12px', font: '500 11px Inter, sans-serif', transition: 'all .15s', flex: 'none' }}
-        >
-          {t.change}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flex: 'none' }}>
+          <div
+            onClick={onChangeProperty}
+            className="hov"
+            style={{ cursor: 'pointer', border: '1px solid rgba(255,255,255,.2)', color: 'rgba(255,255,255,.7)', padding: '6px 10px', font: '500 11px Inter, sans-serif', transition: 'all .15s' }}
+          >
+            {t.change}
+          </div>
+          <LangToggle lang={lang} onChangeLang={onChangeLang} theme="dark" />
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 'use client';
 import type { Lang } from '@/lib/types';
 import { PROPERTIES } from '@/lib/properties';
+import LangToggle from './LangToggle';
 
 const AC = '#C4773B';
 
@@ -12,17 +13,20 @@ const T = {
   ko: { heading: '어느 지점에 머물고 계신가요?', sub: '가상 어시스턴트와 채팅을 시작하려면 선택하세요' },
 };
 
-export default function PropertySelect({ lang, onSelect }: { lang: Lang; onSelect: (id: 'cs1' | 'cs2') => void }) {
+export default function PropertySelect({ lang, onSelect, onChangeLang }: { lang: Lang; onSelect: (id: 'cs1' | 'cs2') => void; onChangeLang: (l: Lang) => void }) {
   const t = T[lang];
   return (
     <div className="fullh" style={{ background: '#FAFAF8', display: 'flex', flexDirection: 'column', fontFamily: 'Inter, sans-serif', overflowY: 'auto' }}>
       {/* Header */}
-      <div style={{ background: '#1A1A18', padding: '28px 24px 24px', textAlign: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 10 }}>
-          <img src="/logo/mark-reverse.svg" alt="SpiceHome" style={{ width: 28, height: 28 }} />
-          <span style={{ font: '500 11px Inter, sans-serif', letterSpacing: '.2em', textTransform: 'uppercase', color: AC }}>SpiceHome</span>
+      <div style={{ background: '#1A1A18', padding: '16px 20px 22px', position: 'relative' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img src="/logo/mark-reverse.svg" alt="SpiceHome" style={{ width: 26, height: 26 }} />
+            <span style={{ font: '500 11px Inter, sans-serif', letterSpacing: '.2em', textTransform: 'uppercase', color: AC }}>SpiceHome</span>
+          </div>
+          <LangToggle lang={lang} onChangeLang={onChangeLang} theme="dark" />
         </div>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, color: '#fff', lineHeight: 1.2, marginBottom: 6 }}>{t.heading}</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, color: '#fff', lineHeight: 1.2, marginBottom: 5 }}>{t.heading}</div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{t.sub}</div>
       </div>
 

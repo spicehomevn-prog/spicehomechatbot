@@ -124,6 +124,11 @@ export default function GuestApp() {
     }, 1800);
   };
 
+  const changeLang = (lang: Lang) => {
+    localStorage.setItem(LANG_KEY, lang);
+    setS(prev => ({ ...prev, lang }));
+  };
+
   const selectProperty = (id: 'cs1' | 'cs2') => {
     localStorage.setItem(PROP_KEY, id);
     setS(prev => ({ ...prev, propId: id, messages: [], screen: 'chat' }));
@@ -136,8 +141,8 @@ export default function GuestApp() {
   const curProp = PROPERTIES.find(p => p.id === s.propId) ?? PROPERTIES[0];
 
   if (s.screen === 'lang-select') return <LangSelect onSelect={selectLang} />;
-  if (s.screen === 'welcome') return <WelcomeScreen lang={s.lang} />;
-  if (s.screen === 'select') return <PropertySelect lang={s.lang} onSelect={selectProperty} />;
+  if (s.screen === 'welcome') return <WelcomeScreen lang={s.lang} onChangeLang={changeLang} />;
+  if (s.screen === 'select') return <PropertySelect lang={s.lang} onSelect={selectProperty} onChangeLang={changeLang} />;
 
   return (
     <ChatScreen
@@ -151,6 +156,7 @@ export default function GuestApp() {
       onSend={send}
       onKey={onKey}
       onChangeProperty={changeProperty}
+      onChangeLang={changeLang}
     />
   );
 }
