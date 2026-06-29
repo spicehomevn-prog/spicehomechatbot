@@ -16,6 +16,7 @@ export interface GuestMessage {
   text: string;
   typing: boolean;
   displayText: string;
+  searchQuery?: string;
 }
 
 export interface GuestAppState {
@@ -30,5 +31,6 @@ export interface GuestAppState {
 export interface ChatResponse {
   reply: string;
   language: string;
+  searchQuery?: string;
   error?: string;
 }

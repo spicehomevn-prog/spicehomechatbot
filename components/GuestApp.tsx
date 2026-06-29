@@ -86,8 +86,15 @@ export default function GuestApp() {
         const err = await res.json().catch(() => ({})) as { error?: string };
         throw new Error(err.error || `HTTP ${res.status}`);
       }
-      const data = await res.json() as { reply?: string };
+      const data = await res.json() as { reply?: string; searchQuery?: string };
       const reply = (data.reply || '').trim() || '…';
+      const searchQuery = (data.searchQuery || '').trim();
+      if (searchQuery) {
+        setS(prev => ({
+          ...prev,
+          messages: prev.messages.map(m => m.id === botId ? { ...m, searchQuery } : m),
+        }));
+      }
       typeOut(botId, reply);
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Đã xảy ra lỗi. Vui lòng thử lại.';

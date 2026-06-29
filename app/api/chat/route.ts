@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     const raw = resp.content[0]?.type === 'text' ? resp.content[0].text : '';
 
     // Parse JSON from raw
-    let data: { reply?: string; language?: string } = {};
+    let data: { reply?: string; language?: string; searchQuery?: string } = {};
     try {
       const txt = raw.trim().replace(/^```(json)?/i, '').replace(/```$/, '').trim();
       data = JSON.parse(txt);
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
       if (m) { try { data = JSON.parse(m[0]); } catch { /* fall through */ } }
     }
 
-    return Response.json({ reply: data.reply || raw, language: data.language || 'vi' });
+    return Response.json({ reply: data.reply || raw, language: data.language || 'vi', searchQuery: data.searchQuery || '' });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     console.error('Chat API error:', message);
